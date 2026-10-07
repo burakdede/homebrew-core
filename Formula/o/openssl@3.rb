@@ -1,16 +1,17 @@
 class OpensslAT3 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://github.com/openssl/openssl/releases/download/openssl-3.6.5/openssl-3.6.5.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-3.6.5.tar.gz"
-  mirror "http://deb.debian.org/debian/pool/main/o/openssl/openssl_3.6.5.orig.tar.gz"
-  sha256 "a2157c2830efdec3788939b00c9b0638306d3f0bbb76dc4832ee503bb397df98"
+  url "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-3.5.9.tar.gz"
+  mirror "http://distfiles.alpinelinux.org/distfiles/edge/openssl-3.5.9.tar.gz"
+  sha256 "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a"
   license "Apache-2.0"
+  version_scheme 1
   compatibility_version 1
 
   livecheck do
     url "https://openssl-library.org/source/"
-    regex(/href=.*?openssl[._-]v?(3(?:\.\d+)+)\.t/i)
+    regex(/href=.*?openssl[._-]v?(3\.5(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -22,6 +23,11 @@ class OpensslAT3 < Formula
   end
 
   keg_only :versioned_formula
+
+  # https://openssl-library.org/post/2026-09-16-eol30/
+  # OpenSSL 3.5 is a LTS version
+  deprecate! date: "2030-04-08", because: :unmaintained
+  disable! date: "2031-04-08", because: :unmaintained
 
   depends_on "ca-certificates" => :no_linkage
 
@@ -124,9 +130,6 @@ class OpensslAT3 < Formula
 
       and run
         #{opt_bin}/c_rehash
-
-      OpenSSL 3.6 is only supported until 2026-11-01 so the `openssl@3`
-      formula will be downgraded to OpenSSL 3.5 (LTS) in a future update.
     EOS
   end
 
