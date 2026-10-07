@@ -33,6 +33,8 @@ class ClangFormatAT11 < Formula
     sha256 "0a8288f065d1f57cb6d96da4d2965cbea32edc572aa972e466e954d17148558b"
   end
 
+  deny_network_access!
+
   def install
     (buildpath/"tools/clang").install resource("clang")
 
