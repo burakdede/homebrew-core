@@ -4,6 +4,7 @@ class Pushpin < Formula
   url "https://github.com/fastly/pushpin/releases/download/v1.42.0/pushpin-1.42.0.tar.bz2"
   sha256 "9ac513757b41511d26cde151b61894201903e73ec003877f667e9c2d1307184e"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/fastly/pushpin.git", branch: "main"
 
   bottle do
@@ -19,7 +20,7 @@ class Pushpin < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "python@3.14"
   depends_on "qtbase"
   depends_on "zeromq"
