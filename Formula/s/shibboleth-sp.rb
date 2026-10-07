@@ -4,6 +4,7 @@ class ShibbolethSp < Formula
   url "https://shibboleth.net/downloads/service-provider/3.6.0/shibboleth-sp-3.6.0.tar.bz2"
   sha256 "17e071191db795b21e89d7793fd4603e2d1375d7ee8ff002a54c5d2c8ce77a2f"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://shibboleth.net/downloads/service-provider/latest/"
@@ -26,7 +27,7 @@ class ShibbolethSp < Formula
   depends_on "httpd"
   depends_on "log4shib"
   depends_on "opensaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "unixodbc"
   depends_on "xerces-c"
   depends_on "xml-security-c"
