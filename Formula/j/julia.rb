@@ -5,6 +5,7 @@ class Julia < Formula
   url "https://github.com/JuliaLang/julia/releases/download/v1.13.1/julia-1.13.1-full.tar.gz"
   sha256 "1c2006bced7a1f8b6c92598ef65b7b24fc74aeaadc53535a45e4c6197001057c"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
+  revision 1
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   # Upstream creates GitHub releases for both stable and LTS versions, so the
@@ -37,7 +38,7 @@ class Julia < Formula
   depends_on "mpfr" => :no_linkage
   depends_on "openblas64" => :no_linkage
   depends_on "openlibm" => :no_linkage
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "p7zip"
   depends_on "pcre2"
   depends_on "suite-sparse"
