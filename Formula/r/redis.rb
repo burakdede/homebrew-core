@@ -13,6 +13,7 @@ class Redis < Formula
     { any_of: ["CC0-1.0", "BSD-2-Clause"] }, # deps/hdr_histogram
     any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"], # modules: phonetics
   ]
+  revision 1
   compatibility_version 1
   head "https://github.com/redis/redis.git", branch: "unstable"
 
@@ -36,7 +37,7 @@ class Redis < Formula
   depends_on "libtool" => :build
   depends_on "python@3.14" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build
 
