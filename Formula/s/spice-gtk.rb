@@ -6,7 +6,7 @@ class SpiceGtk < Formula
   url "https://www.spice-space.org/download/gtk/spice-gtk-0.42.tar.xz"
   sha256 "9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
-  revision 3
+  revision 4
 
   livecheck do
     url "https://www.spice-space.org/download/gtk/"
@@ -44,7 +44,7 @@ class SpiceGtk < Formula
   depends_on "libusb"
   depends_on "libx11"
   depends_on "lz4"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "opus"
   depends_on "phodav"
   depends_on "pixman"
@@ -117,7 +117,7 @@ class SpiceGtk < Formula
         return spice_session_new() ? 0 : 1;
       }
     CPP
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("icu4c")/"pkgconfig"
     system ENV.cc, "test.cpp",
                    *shell_output("pkgconf --cflags --libs spice-client-gtk-3.0").chomp.split,
