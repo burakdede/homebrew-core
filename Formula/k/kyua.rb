@@ -1,10 +1,9 @@
 class Kyua < Formula
   desc "Testing framework for infrastructure software"
   homepage "https://github.com/freebsd/kyua"
-  url "https://github.com/freebsd/kyua/releases/download/kyua-0.14.1/kyua-0.14.1.tar.gz"
-  sha256 "3caf30a7e316f4f21c32e1c419ec80371fe113e3eed10ba1db9e6efc7ee15ecb"
+  url "https://github.com/freebsd/kyua/releases/download/kyua-0.15.0/kyua-0.15.0.tar.gz"
+  sha256 "08b0d498d1440c49413ef651ace410ef5bab83d48a2c5024b0a0e500da96d8c4"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/freebsd/kyua.git", branch: "master"
 
   livecheck do
