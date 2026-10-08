@@ -187,7 +187,6 @@ class Uffizzi < Formula
     ENV["GEM_PATH"] = libexec
 
     resources.each do |r|
-      r.fetch
       system "gem", "install", r.cached_download, "--no-document", "--install-dir", libexec
     end
 
